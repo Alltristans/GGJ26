@@ -1,0 +1,42 @@
+# .gitignore untuk Godot 4.x
+
+# Godot 4+ specific ignores
+.godot/
+.import/
+
+# Godot-specific files to ignore
+*.import
+*.translation
+
+# Mono-specific ignores (if using C#)
+.mono/
+data_*/
+mono_crash.*.json
+
+# Build outputs
+export/
+export.cfg
+export_presets.cfg
+
+# OS/Editor specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
+.directory
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/

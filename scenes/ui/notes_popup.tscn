@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://dngwdyf8tqfi8"]
+
+[ext_resource type="Texture2D" uid="uid://ddaggq1cmc16y" path="res://asset/InGame/notes.png" id="1"]
+[ext_resource type="Script" uid="uid://dghlljgigvou1" path="res://scripts/ui/notes_popup.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://boi5jmdc5x4mv" path="res://asset/InGame/ingame_vampir preview 2.png" id="2_t5b20"]
+
+[node name="NotesPopup" type="Control" unique_id=294262624 groups=["notes_popup"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="Background3" type="TextureRect" parent="." unique_id=2120542962]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 1922.0
+offset_bottom = 1090.0
+texture = ExtResource("2_t5b20")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1727821855]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="NotesImage" type="TextureRect" parent="." unique_id=1550740916]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -414.99994
+offset_top = -513.0
+offset_right = 275.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0592457, 1.0592457)
+texture = ExtResource("1")
+stretch_mode = 3
+
+[connection signal="gui_input" from="Overlay" to="." method="_on_overlay_input"]

@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://b4q3qx5y8jvwh"]
+
+[ext_resource type="Script" uid="uid://cpf0jhs27251b" path="res://scripts/ui/main_menu_controller.gd" id="1_1"]
+[ext_resource type="Texture2D" uid="uid://bb6eply0p4gix" path="res://asset/Contoh_mainmenu.jpg" id="2_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://yi7ojw4cdrck" path="res://asset/btn_menu.png" id="3_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://q4ii0v6gmpji" path="res://asset/btn_clicked.png" id="4_uhagc"]
+[ext_resource type="Script" uid="uid://bvh0w7nqfi631" path="res://scripts/ui/button_hover_effect.gd" id="5_x2yvf"]
+[ext_resource type="AudioStream" path="res://asset/Music/OGG/SFX Click1.ogg" id="6_a1b2c"]
+
+[node name="MainMenu" type="Control" unique_id=1724951734]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1")
+
+[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_a1b2c")
+volume_db = 0.0
+
+[node name="Background2" type="TextureRect" parent="." unique_id=455538223]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_x2yvf")
+
+[node name="StartButton" type="TextureButton" parent="." unique_id=826590559]
+layout_mode = 0
+offset_left = 1197.0
+offset_top = 422.0
+offset_right = 1826.0
+offset_bottom = 617.0
+texture_normal = ExtResource("3_x2yvf")
+texture_pressed = ExtResource("4_uhagc")
+script = ExtResource("5_x2yvf")
+
+[node name="Label" type="Label" parent="StartButton" unique_id=2000108128]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.5
+offset_bottom = -8.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Start Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsButton" type="TextureButton" parent="." unique_id=1017820994]
+layout_mode = 0
+offset_left = 1197.0
+offset_top = 586.0
+offset_right = 1826.0
+offset_bottom = 781.0
+texture_normal = ExtResource("3_x2yvf")
+texture_pressed = ExtResource("4_uhagc")
+script = ExtResource("5_x2yvf")
+
+[node name="Label" type="Label" parent="SettingsButton" unique_id=1255801535]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Setting"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="TextureButton" parent="." unique_id=277974945]
+layout_mode = 0
+offset_left = 1197.0
+offset_top = 758.0
+offset_right = 1826.0
+offset_bottom = 953.0
+texture_normal = ExtResource("3_x2yvf")
+texture_pressed = ExtResource("4_uhagc")
+script = ExtResource("5_x2yvf")
+
+[node name="Label" type="Label" parent="ExitButton" unique_id=1897557317]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.5
+offset_bottom = -7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_clicked"]
+[connection signal="pressed" from="StartButton" to="ClickAudio" method="play"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_clicked"]
+[connection signal="pressed" from="SettingsButton" to="ClickAudio" method="play"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_clicked"]
+[connection signal="pressed" from="ExitButton" to="ClickAudio" method="play"]

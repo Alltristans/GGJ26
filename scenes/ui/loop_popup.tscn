@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://s3frt6ua36vv"]
+
+[node name="MagnifierPopup" type="CanvasLayer" unique_id=2133156355]
+
+[node name="Control" type="Control" parent="." unique_id=119774122]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

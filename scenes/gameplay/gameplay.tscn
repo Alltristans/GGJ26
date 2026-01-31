@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://hvqjimig0big"]
+
+[ext_resource type="Script" uid="uid://cpf0jhs27251b" path="res://scripts/ui/main_menu_controller.gd" id="1_8mcyx"]
+[ext_resource type="Texture2D" uid="uid://boi5jmdc5x4mv" path="res://asset/InGame/ingame_vampir preview 2.png" id="2_pa1on"]
+[ext_resource type="Texture2D" uid="uid://bu1aj82mwlxmx" path="res://asset/InGame/ingame_background.JPG" id="3_elju3"]
+[ext_resource type="Texture2D" uid="uid://b7s7jvrpmase" path="res://asset/InGame/bg_meja.png" id="4_lb4ud"]
+[ext_resource type="Texture2D" uid="uid://c2lchgyx2m8rt" path="res://asset/InGame/characters/male/sheet male example.png" id="4_td3fc"]
+[ext_resource type="Texture2D" uid="uid://bo62o7ab7snhk" path="res://asset/InGame/characters/mask/IMG_3677.PNG" id="5_216mg"]
+[ext_resource type="Texture2D" uid="uid://d3ii6nrh3c3e5" path="res://asset/InGame/item_glassess.png" id="5_bhb63"]
+[ext_resource type="Script" uid="uid://bvh0w7nqfi631" path="res://scripts/ui/button_hover_effect.gd" id="5_i4dfm"]
+[ext_resource type="Texture2D" uid="uid://djardn00v4q4m" path="res://asset/InGame/item_stamp_2.png" id="6_i6m2i"]
+[ext_resource type="Texture2D" uid="uid://c5bh2k24oihkj" path="res://asset/InGame/item_stamp_1.png" id="7_td3fc"]
+[ext_resource type="Texture2D" uid="uid://ddaggq1cmc16y" path="res://asset/InGame/notes.png" id="9_bhb63"]
+[ext_resource type="Texture2D" uid="uid://cp5ssgdm8mr42" path="res://asset/InGame/item_telepon.png" id="10_i6m2i"]
+[ext_resource type="Texture2D" uid="uid://bx6e2p87238dx" path="res://asset/InGame/item_termometer.png" id="11_td3fc"]
+[ext_resource type="Script" uid="uid://nyd6uwgptbcq" path="res://scripts/tools/notes_tool.gd" id="12_krs01"]
+[ext_resource type="PackedScene" uid="uid://dngwdyf8tqfi8" path="res://scenes/ui/notes_popup.tscn" id="15_2eo0c"]
+
+[node name="Gameplay" type="Control" unique_id=1724951734]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8mcyx")
+
+[node name="Background3" type="TextureRect" parent="." unique_id=1675224377]
+visible = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_pa1on")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=455538223]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_elju3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1330682272]
+layout_mode = 0
+offset_left = -516.0
+offset_top = -110.0
+offset_right = 1404.0
+offset_bottom = 970.0
+scale = Vector2(1.7844546, 1.7844546)
+texture = ExtResource("4_td3fc")
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=934436834]
+layout_mode = 0
+offset_left = 791.8387
+offset_top = 6.724744
+offset_right = 1138.8386
+offset_bottom = 377.72473
+scale = Vector2(0.9653201, 0.9653201)
+texture = ExtResource("5_216mg")
+
+[node name="Meja" type="TextureRect" parent="." unique_id=1077784302]
+layout_mode = 0
+offset_top = 812.0
+offset_right = 1920.0
+offset_bottom = 1081.0
+texture = ExtResource("4_lb4ud")
+
+[node name="KacaPembesar" type="TextureButton" parent="Meja" unique_id=636056657]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 133.0
+offset_right = 1040.0
+offset_bottom = 408.0
+scale = Vector2(0.76470584, 0.52)
+texture_normal = ExtResource("5_bhb63")
+script = ExtResource("5_i4dfm")
+
+[node name="TatakanStempel" type="TextureRect" parent="Meja" unique_id=1787769193]
+layout_mode = 0
+offset_left = 1413.0
+offset_top = 176.0
+offset_right = 1604.0
+offset_bottom = 251.0
+texture = ExtResource("6_i6m2i")
+
+[node name="Stempel" type="TextureButton" parent="Meja" unique_id=1077053213]
+layout_mode = 0
+offset_left = 1415.0
+offset_top = 70.0
+offset_right = 1589.0
+offset_bottom = 236.0
+texture_normal = ExtResource("7_td3fc")
+script = ExtResource("5_i4dfm")
+
+[node name="Notes" type="TextureButton" parent="Meja" unique_id=359303508]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -46.000004
+offset_right = 711.0
+offset_bottom = 964.0
+rotation = 0.08207358
+texture_normal = ExtResource("9_bhb63")
+script = ExtResource("5_i4dfm")
+
+[node name="NotesHandler" type="Node2D" parent="Meja/Notes" unique_id=1613824996]
+script = ExtResource("12_krs01")
+
+[node name="Telepon" type="TextureButton" parent="Meja" unique_id=1357214000]
+layout_mode = 0
+offset_left = 1620.0
+offset_top = -372.0
+offset_right = 1927.0
+offset_bottom = 265.0
+texture_normal = ExtResource("10_i6m2i")
+script = ExtResource("5_i4dfm")
+
+[node name="Termometer" type="TextureButton" parent="Meja" unique_id=827530717]
+layout_mode = 0
+offset_left = 1047.0
+offset_top = 118.0
+offset_right = 1472.0
+offset_bottom = 330.0
+scale = Vector2(0.67115766, 0.67115766)
+texture_normal = ExtResource("11_td3fc")
+script = ExtResource("5_i4dfm")
+
+[node name="NotesPopup" parent="." unique_id=894506669 instance=ExtResource("15_2eo0c")]
+visible = false
+layout_mode = 1
