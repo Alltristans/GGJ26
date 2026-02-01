@@ -30,7 +30,6 @@ func _ready() -> void:
 		if child is Label:
 			label_node = child
 			# Set layout agar Label memenuhi button
-			label_node.layout_mode = 1
 			label_node.anchors_preset = 15  # Full Rect
 			label_node.offset_left = 0
 			label_node.offset_top = 0

@@ -16,12 +16,12 @@ var magnifier_viewport: SubViewport
 var magnifier_camera: Camera2D
 var magnifier_ui: Control
 var tween: Tween = null
+var magnifier_popup: Control = null
 
 func _ready() -> void:
 	print("=== MagnifierHandler _ready() START ===")
-	_setup_magnifier_viewport()
 	_connect_parent_button()
-	set_process(true)
+	set_process(false)
 	print("=== MagnifierHandler _ready() END ===")
 
 
@@ -38,7 +38,7 @@ func on_use() -> void:
 	super.on_use()
 	# Tandai bahwa NPC sudah diinspect
 	npc_inspected = true
-	_toggle_magnifier()
+	_show_magnifier_popup()
 
 
 ## Dipanggil ketika tool di-lower (right-click)
@@ -112,7 +112,22 @@ func _connect_parent_button() -> void:
 
 func _on_button_pressed() -> void:
 	print("[BUTTON CLICK] KacaPembesar clicked!")
-	_toggle_magnifier()
+	_show_magnifier_popup()
+
+func _show_magnifier_popup() -> void:
+	# Cari magnifier popup di scene tree
+	if not magnifier_popup:
+		magnifier_popup = get_tree().get_first_node_in_group("magnifier_popup")
+
+	if magnifier_popup:
+		if magnifier_popup.has_method("show_popup"):
+			magnifier_popup.call("show_popup")
+		else:
+			magnifier_popup.visible = true
+		_deactivate_magnifier()
+		print("Magnifier popup opened successfully!")
+	else:
+		push_error("MagnifierPopup not found! Make sure it's in group 'magnifier_popup'")
 
 func _toggle_magnifier() -> void:
 	print("[TOGGLE] Current state: ", is_active, " → ", !is_active)

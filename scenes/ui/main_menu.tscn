@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yi7ojw4cdrck" path="res://asset/btn_menu.png" id="3_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://q4ii0v6gmpji" path="res://asset/btn_clicked.png" id="4_uhagc"]
 [ext_resource type="Script" uid="uid://bvh0w7nqfi631" path="res://scripts/ui/button_hover_effect.gd" id="5_x2yvf"]
-[ext_resource type="AudioStream" path="res://asset/Music/OGG/SFX Click1.ogg" id="6_a1b2c"]
+[ext_resource type="AudioStream" uid="uid://br3jbmedkrqx3" path="res://asset/Music/OGG/SFX Click1.ogg" id="6_a1b2c"]
 
 [node name="MainMenu" type="Control" unique_id=1724951734]
 layout_mode = 3
@@ -16,9 +16,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1")
 
-[node name="ClickAudio" type="AudioStreamPlayer" parent="."]
+[node name="ClickAudio" type="AudioStreamPlayer" parent="." unique_id=1374951967]
 stream = ExtResource("6_a1b2c")
-volume_db = 0.0
 
 [node name="Background2" type="TextureRect" parent="." unique_id=455538223]
 layout_mode = 0

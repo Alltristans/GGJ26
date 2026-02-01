@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bv7fcwn1yd50a"]
+
+[ext_resource type="Texture2D" uid="uid://d3ii6nrh3c3e5" path="res://asset/InGame/item_glassess.png" id="1"]
+[ext_resource type="Script" uid="uid://ixig4882usa3" path="res://scripts/ui/magnifier_popup.gd" id="2"]
+
+[node name="MagnifierPopup" type="Control" unique_id=1293875674 groups=["magnifier_popup"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2")
+
+[node name="Overlay" type="ColorRect" parent="." unique_id=1268748237]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="GlassesImage" type="TextureRect" parent="." unique_id=510616329]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1")
+stretch_mode = 3
+
+[node name="ZoomViewport" type="SubViewport" parent="GlassesImage" unique_id=296186125]
+size = Vector2i(400, 400)
+
+[node name="ZoomContent" type="CanvasLayer" parent="GlassesImage/ZoomViewport" unique_id=60938102]
+
+[node name="GlassesMask" type="Polygon2D" parent="." unique_id=164765578]
+
+[connection signal="gui_input" from="Overlay" to="." method="_on_overlay_input"]

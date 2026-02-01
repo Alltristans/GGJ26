@@ -10,11 +10,13 @@
 [ext_resource type="Script" uid="uid://bvh0w7nqfi631" path="res://scripts/ui/button_hover_effect.gd" id="5_i4dfm"]
 [ext_resource type="Texture2D" uid="uid://djardn00v4q4m" path="res://asset/InGame/item_stamp_2.png" id="6_i6m2i"]
 [ext_resource type="Texture2D" uid="uid://c5bh2k24oihkj" path="res://asset/InGame/item_stamp_1.png" id="7_td3fc"]
+[ext_resource type="Script" uid="uid://c81pgxkqn2o6n" path="res://scripts/tools/magnifier_tool.gd" id="8_pimn4"]
 [ext_resource type="Texture2D" uid="uid://ddaggq1cmc16y" path="res://asset/InGame/notes.png" id="9_bhb63"]
 [ext_resource type="Texture2D" uid="uid://cp5ssgdm8mr42" path="res://asset/InGame/item_telepon.png" id="10_i6m2i"]
 [ext_resource type="Texture2D" uid="uid://bx6e2p87238dx" path="res://asset/InGame/item_termometer.png" id="11_td3fc"]
 [ext_resource type="Script" uid="uid://nyd6uwgptbcq" path="res://scripts/tools/notes_tool.gd" id="12_krs01"]
 [ext_resource type="PackedScene" uid="uid://dngwdyf8tqfi8" path="res://scenes/ui/notes_popup.tscn" id="15_2eo0c"]
+[ext_resource type="PackedScene" uid="uid://bv7fcwn1yd50a" path="res://scenes/ui/magnifier_popup.tscn" id="16_2eo0c"]
 
 [node name="Gameplay" type="Control" unique_id=1724951734]
 layout_mode = 3
@@ -56,10 +58,10 @@ offset_bottom = 377.72473
 scale = Vector2(0.9653201, 0.9653201)
 texture = ExtResource("5_216mg")
 
-[node name="Meja" type="TextureRect" parent="." unique_id=1077784302]
+[node name="Meja" type="TextureRect" parent="." unique_id=1077784302 groups=["gameplay_layer"]]
 layout_mode = 0
-offset_top = 812.0
-offset_right = 1920.0
+offset_top = 811.99994
+offset_right = 1920.0001
 offset_bottom = 1081.0
 texture = ExtResource("4_lb4ud")
 
@@ -73,20 +75,23 @@ scale = Vector2(0.76470584, 0.52)
 texture_normal = ExtResource("5_bhb63")
 script = ExtResource("5_i4dfm")
 
+[node name="GlassHandler" type="Node2D" parent="Meja/KacaPembesar" unique_id=1193758818]
+script = ExtResource("8_pimn4")
+
 [node name="TatakanStempel" type="TextureRect" parent="Meja" unique_id=1787769193]
 layout_mode = 0
-offset_left = 1413.0
-offset_top = 176.0
-offset_right = 1604.0
-offset_bottom = 251.0
+offset_left = 1441.0
+offset_top = 183.0
+offset_right = 1632.0
+offset_bottom = 258.0
 texture = ExtResource("6_i6m2i")
 
 [node name="Stempel" type="TextureButton" parent="Meja" unique_id=1077053213]
 layout_mode = 0
-offset_left = 1415.0
-offset_top = 70.0
-offset_right = 1589.0
-offset_bottom = 236.0
+offset_left = 1443.0
+offset_top = 77.0
+offset_right = 1617.0
+offset_bottom = 243.0
 texture_normal = ExtResource("7_td3fc")
 script = ExtResource("5_i4dfm")
 
@@ -125,3 +130,9 @@ script = ExtResource("5_i4dfm")
 [node name="NotesPopup" parent="." unique_id=894506669 instance=ExtResource("15_2eo0c")]
 visible = false
 layout_mode = 1
+offset_right = 0.00012207031
+
+[node name="MagnifierPopup" parent="." unique_id=1293875674 instance=ExtResource("16_2eo0c")]
+visible = false
+layout_mode = 1
+offset_right = 0.00012207031
