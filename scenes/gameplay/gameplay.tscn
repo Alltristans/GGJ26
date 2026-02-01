@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://boi5jmdc5x4mv" path="res://asset/InGame/ingame_vampir preview 2.png" id="2_pa1on"]
 [ext_resource type="Texture2D" uid="uid://bu1aj82mwlxmx" path="res://asset/InGame/ingame_background.JPG" id="3_elju3"]
 [ext_resource type="Texture2D" uid="uid://b7s7jvrpmase" path="res://asset/InGame/bg_meja.png" id="4_lb4ud"]
-[ext_resource type="Texture2D" uid="uid://c2lchgyx2m8rt" path="res://asset/InGame/characters/male/sheet male example.png" id="4_td3fc"]
+[ext_resource type="Texture2D" path="res://asset/InGame/characters/male/sheet male example.png" id="4_td3fc"]
 [ext_resource type="Texture2D" uid="uid://bo62o7ab7snhk" path="res://asset/InGame/characters/mask/IMG_3677.PNG" id="5_216mg"]
 [ext_resource type="Texture2D" uid="uid://d3ii6nrh3c3e5" path="res://asset/InGame/item_glassess.png" id="5_bhb63"]
 [ext_resource type="Script" uid="uid://bvh0w7nqfi631" path="res://scripts/ui/button_hover_effect.gd" id="5_i4dfm"]
+[ext_resource type="Script" uid="uid://l2jmt65d8rkj" path="res://scripts/ui/random_character_preview.gd" id="5_moho6"]
 [ext_resource type="Texture2D" uid="uid://djardn00v4q4m" path="res://asset/InGame/item_stamp_2.png" id="6_i6m2i"]
 [ext_resource type="Texture2D" uid="uid://c5bh2k24oihkj" path="res://asset/InGame/item_stamp_1.png" id="7_td3fc"]
 [ext_resource type="Script" uid="uid://c81pgxkqn2o6n" path="res://scripts/tools/magnifier_tool.gd" id="8_pimn4"]
@@ -48,8 +49,10 @@ offset_right = 1404.0
 offset_bottom = 970.0
 scale = Vector2(1.7844546, 1.7844546)
 texture = ExtResource("4_td3fc")
+script = ExtResource("5_moho6")
 
 [node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=934436834]
+visible = false
 layout_mode = 0
 offset_left = 791.8387
 offset_top = 6.724744

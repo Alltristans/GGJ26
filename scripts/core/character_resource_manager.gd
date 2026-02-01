@@ -3,12 +3,34 @@ class_name CharacterResourceManager
 
 # Character texture pools
 const MALE_CHARACTERS = [
-	"res://asset/InGame/characters/male/sheet male example.png"
-	# Tambahkan lebih banyak male character di sini
+	"res://asset/InGame/characters/male/male 1-1.png",
+	"res://asset/InGame/characters/male/male 1-2.png",
+	"res://asset/InGame/characters/male/male 1-3.png",
+	"res://asset/InGame/characters/male/male 1-4.png",
+	"res://asset/InGame/characters/male/male 2-1.png",
+	"res://asset/InGame/characters/male/male 2-2.png",
+	"res://asset/InGame/characters/male/male 2-3.png",
+	"res://asset/InGame/characters/male/male 3-1.png",
+	"res://asset/InGame/characters/male/male 3-2.png",
+	"res://asset/InGame/characters/male/male 3-3.png",
+	"res://asset/InGame/characters/male/male 4-1.png",
+	"res://asset/InGame/characters/male/male 4-2.png",
+	"res://asset/InGame/characters/male/male 4-3.png"
 ]
 
 const FEMALE_CHARACTERS = [
-	# Tambahkan female character di sini ketika asset tersedia
+	"res://asset/InGame/characters/female/female 1-1.png",
+	"res://asset/InGame/characters/female/female 1-2.png",
+	"res://asset/InGame/characters/female/female 1-3.png",
+	"res://asset/InGame/characters/female/female 2-1.png",
+	"res://asset/InGame/characters/female/female 2-2.png",
+	"res://asset/InGame/characters/female/female 2-3.png",
+	"res://asset/InGame/characters/female/female 3-1.png",
+	"res://asset/InGame/characters/female/female 3-2.png",
+	"res://asset/InGame/characters/female/female 3-3.png",
+	"res://asset/InGame/characters/female/female 4-1.png",
+	"res://asset/InGame/characters/female/female 4-2.png",
+	"res://asset/InGame/characters/female/female 4-3.png"
 ]
 
 const MASK_ACCESSORIES = [
